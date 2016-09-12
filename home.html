@@ -1,0 +1,16 @@
+<div ng-init="getData()">
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Category</th>
+    </tr>
+    <tr ng-repeat="flower in flowerArray">
+      <td>{{flower.title}}</td>
+      <td>{{flower.description}}</td>
+      <td>{{flower.price}}</td>
+      <td>{{flower.category}}</td>
+    </tr>
+  </table>
+</div>
