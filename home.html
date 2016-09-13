@@ -6,11 +6,15 @@
       <th>Price</th>
       <th>Category</th>
     </tr>
-    <tr ng-repeat="flower in flowerArray">
+    <tr ng-repeat-start="(category,flowers) in flowerObj">
+      <td colspan="4" style="font-weight: bold; text-align: center">{{category}}</td>
+    </tr>
+    <tr ng-repeat="flower in flowers">
       <td>{{flower.title}}</td>
       <td>{{flower.description}}</td>
       <td>{{flower.price}}</td>
       <td>{{flower.category}}</td>
     </tr>
+    <tr ng-repeat-end></tr>
   </table>
 </div>

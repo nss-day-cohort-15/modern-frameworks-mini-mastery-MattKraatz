@@ -2,12 +2,20 @@
 
 app.controller('mainCtrl',function($scope,mainFact) {
 
-  $scope.flowerArray = [];
+  $scope.flowerObj = {};
 
   $scope.getData = () => {
     mainFact.getData()
       .then((data) => {
-        $scope.flowerArray = data;
-      })
+        for (let i in data) {
+          if ($scope.flowerObj[data[i].category]) {
+            $scope.flowerObj[data[i].category].push(data[i]);
+          } else {
+            $scope.flowerObj[data[i].category] = [data[i]];
+          }
+        }
+        console.log($scope.flowerObj)
+      }
+    )
   }
 })
